@@ -84,9 +84,22 @@
 	z-index: 999;
 }
 </style> 
-
-<input class="actionBtn" type="button" id="action">
-<input class="stopBtn" type="button" value="停止" id="stop">
+<div class="noName" style="display: none;"></div>
+<div class="c-lucky">
+	<img class="isYou" src="http://demo.sc.chinaz.net/Files/DownLoad/webjs1/201906/jiaoben6857/img/luckyDog/isYou.png" style="display: none;">
+	<div class="luckyName">
+		<div class="name1">
+		</div>
+		<div class="name2">
+			命中注定
+		</div>
+		<div class="name3">
+		</div>
+	</div>
+	
+	<input class="actionBtn" type="button" id="action">
+	<input class="stopBtn" type="button" value="停止" id="stop">
+</div>
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
