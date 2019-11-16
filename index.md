@@ -1,6 +1,7 @@
 ## 欢迎来到王泽荣耀1
 <script>
 document.write("Hello World!")
+ alert('测试')
 </script>
 
 ## 欢迎来到王泽荣耀11
