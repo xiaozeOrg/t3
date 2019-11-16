@@ -1,7 +1,7 @@
 ## 欢迎来到贝莱优品弹子石旗舰店，下面是您今天的福利，注意查收哦、
 <script>
  var constant  = ['天啦,95折', '送精美保温瓶一杯(冬天来了，暖手更暖心)', '恭喜你，喜获店家亲笔签名','刘德华演唱会一张'];
- var temp = Math.random();
+ var temp = Math.floor(Math.random()*10+1);
  var result = constant[temm]
  if(result){
   document.write(result);
