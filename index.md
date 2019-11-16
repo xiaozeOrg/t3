@@ -4,6 +4,10 @@
  var tagHeader = document.getElementsByTagName("header");
  var header = $("header");
  header.empty();
+ 
+ var footer = $("footer");
+ footer.empty();
+ 
  console.log(tagHeader);
  var constant  = ['天啦,95折', '送精美保温瓶一杯(冬天来了，暖手更暖心)', '恭喜你，喜获店家亲笔签名','刘德华演唱会一张'];
  var temp = Math.floor(Math.random()*10+1);
