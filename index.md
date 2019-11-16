@@ -1,4 +1,4 @@
-## 欢迎来到贝莱优品弹子石旗舰店，下面是您今天的福利，注意查收哦、
+
 <style type="text/css"> 
 .c-lucky {
 	background-image: url(http://demo.sc.chinaz.net/Files/DownLoad/webjs1/201906/jiaoben6857/img/luckyDog/background.png);
@@ -84,8 +84,10 @@
 	z-index: 999;
 }
 </style> 
+
 <input class="actionBtn" type="button" id="action">
 <input class="stopBtn" type="button" value="停止" id="stop">
+
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
  var tagHeader = document.getElementsByTagName("header");
