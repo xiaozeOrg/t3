@@ -83,6 +83,14 @@
 	left: -165px;
 	z-index: 999;
 }
+
+.wrapper {
+    margin: 0 auto;
+    background: #ffffff;
+}
+footer{
+   display:none
+}
 </style> 
 <div class="noName" style="display: none;"></div>
 <div class="c-lucky">
@@ -171,7 +179,7 @@ $(".stopBtn").click(function(){
 	if(toggle==0){
 		$("#palyerAction").attr("src","img/luckyDog/jump.mp3");
 		setTimeout(function(){
-			setStop= setInterval("slowStop(5)",1000);
+			setStop= setInterval("slowStop(2)",1000);
 		},2000);
 	}else{
 		alert("请先拉动拉杆！");
