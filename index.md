@@ -6,6 +6,6 @@
  if(result){
   document.write(result);
  }else{
-  document.write('很遗憾，下次努力，幸运一定会掉落在您的头顶');
+  document.write('很遗憾，下次努力，幸运一定会掉落在您的头顶哈');
  }
 </script>
