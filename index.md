@@ -99,7 +99,7 @@ footer{
 		<div class="name1">
 		</div>
 		<div class="name2">
-			命中注定
+			祝您好运
 		</div>
 		<div class="name3">
 		</div>
