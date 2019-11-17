@@ -104,6 +104,7 @@ body {
 section {
     font-size: 15px;
     border-radius: 0 0 8px 8px;
+    padding: 0px;
 }
 </style> 
 <div class="noName" style="display: none;"></div>
@@ -172,7 +173,7 @@ var stopNowTime=1;
 
 
 $("#action").click(function(){
-	$("#palyerAction").attr("src","img/luckyDog/action.mp3");
+	$("#palyerAction").attr("src","http://demo.sc.chinaz.net/Files/DownLoad/webjs1/201906/jiaoben6857/img/luckyDog/action.mp3");
 	if(toggle==1){
 		setAction = setInterval("action(100)",300);
 		toggle=0;
@@ -185,7 +186,7 @@ $("#action").click(function(){
 
 $(".stopBtn").click(function(){
 	if(toggle==0){
-		$("#palyerAction").attr("src","img/luckyDog/jump.mp3");
+              $("#palyerAction").attr("src","http://demo.sc.chinaz.net/Files/DownLoad/webjs1/201906/jiaoben6857/img/luckyDog/jump.mp3");
 		setTimeout(function(){
 			setStop= setInterval("slowStop(2)",1000);
 		},2000);
