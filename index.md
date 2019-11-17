@@ -155,7 +155,7 @@ section {
 		{"name":"天啦,95折"},
 		{"name":"天啦,95折"},
 		{"name":"送精美保温瓶一杯(冬天来了，暖手更暖心)"},
-		{"name":"韩信"},
+		{"name":"韩信11"},
 		{"name":"送精美保温瓶一杯(冬天来了，暖手更暖心)"},
 		{"name":"天啦,95折"},
 		{"name":"天啦,95折"},
@@ -163,6 +163,8 @@ section {
 	"code":1,
 	"mag":"请求成功！"
 }
+
+var array = ['天啦,95折','恭喜你，喜获店家亲笔签名','天啦,95折','刘德华演唱会一张','天啦,95折','免费逛窑子','天啦,95折','范冰冰谁都可以上','送精美保温瓶一杯(冬天来了，暖手更暖心)','韩信大将军赠予你','天啦,95折','小乔也归你','大乔不能跟我抢','天啦,95折'];
 var name1 =[164,-164,0];
 var time1 = [0,500,500];
 var toggle = 1;
@@ -171,9 +173,21 @@ var setStop=null;
 var setFontSize=null;
 var stopNowTime=1;
 
+function random(length){
+	var temp = Math.floor(Math.random() * length + 1);
+	if(temp>length)random(length);
+	
+	return temp;
+}
 
 $("#action").click(function(){
-	$("#palyerAction").attr("src","http://demo.sc.chinaz.net/Files/DownLoad/webjs1/201906/jiaoben6857/img/luckyDog/action.mp3");
+	var attr = $("#action").attr("used");
+	if(attr)return alert("您已经抽过奖啦~");
+	$("#action").attr("used",true);
+	//$("#palyerAction").attr("src","http://demo.sc.chinaz.net/Files/DownLoad/webjs1/201906/jiaoben6857/img/luckyDog/action.mp3");
+	//显示抽奖的内容
+	showing();
+	return;
 	if(toggle==1){
 		setAction = setInterval("action(100)",300);
 		toggle=0;
@@ -183,17 +197,52 @@ $("#action").click(function(){
 	}
 });
 
+/**
+ * 产生随机整数，包含下限值，包括上限值
+ * @param {Number} lower 下限
+ * @param {Number} upper 上限
+ * @return {Number} 返回在下限到上限之间的一个随机整数
+ */
+function randomPlus(lower, upper) {
+	return Math.floor(Math.random() * (upper - lower+1)) + lower;
+} 
+
+
+function fontShowIng(){
+	var radom = randomPlus(20,40);
+	$(".name2").css('font-size',radom + "px").fadeOut("slow").fadeIn(500)//	.css("text-align","center");
+	setTimeout(fontShowIng,600)
+}
 
 $(".stopBtn").click(function(){
-	if(toggle==0){
-              $("#palyerAction").attr("src","http://demo.sc.chinaz.net/Files/DownLoad/webjs1/201906/jiaoben6857/img/luckyDog/jump.mp3");
-		setTimeout(function(){
-			setStop= setInterval("slowStop(2)",1000);
-		},2000);
-	}else{
-		alert("请先拉动拉杆！");
-	}
+	
+	$("#stop").attr("stop",true);
+
+	setTimeout(function(){
+		var radom = random(array.length);
+		var text = array[radom];
+		var name2 = $(".name2");
+		//name2.css("font-size","30px")
+		name2.text(text);
+		name2.fadeOut("slow").fadeOut(3000).fadeIn(500);
+		fontShowIng(); 
+	},500);  
 });
+function showing(){
+	var stop = $("#stop").attr("stop");
+	if(stop){//已经停止了,退出递归
+		return;
+	}
+	var radom = random(array.length);
+	var text = array[radom];
+	var name2 = $(".name2");
+	name2.css({"font-size":"20px"});
+	//name2.css({"font-size":"30px","display":"inline-block"});
+	name2.text(text);
+	
+	//name2.fadeOut("slow").fadeOut(3000).fadeIn(500);
+	setTimeout(showing,100);
+}
 
 function slowStop(stopTime){
 
@@ -206,9 +255,9 @@ function slowStop(stopTime){
 		clearInterval(setStop);
 		toggle=1;
 		$("#palyerAction").attr("src","");
-		$(".isYou").css("display","block");
+		//$(".isYou").css("display","block");
 		setFontSize = setInterval(function(){
-			$(".luckyName").animate({"fontSize":"100px"},500).animate({"fontSize":"40px"},500);
+			$(".luckyName").animate({"fontSize":"60px"},500).animate({"fontSize":"20px"},500);
 		},1100);
 	}
 }
