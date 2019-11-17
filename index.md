@@ -100,6 +100,10 @@ body {
     font-weight: 300;
     width: 800px;
     background-color: #000000;
+	background-color: #ffffff;
+}
+.grant{
+	text-align: center;
 }
 section {
     font-size: 15px;
@@ -122,6 +126,7 @@ section {
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
+	alert(window.location.href);
  var tagHeader = document.getElementsByTagName("header");
  var header = $("header");
  header.empty();
@@ -129,45 +134,9 @@ section {
  var footer = $("footer");
  footer.empty();
  
- console.log(tagHeader);
- var constant  = ['天啦,95折', '送精美保温瓶一杯(冬天来了，暖手更暖心)', '恭喜你，喜获店家亲笔签名','刘德华演唱会一张'];
- var temp = Math.floor(Math.random()*10+1);
- var result = constant[temp]
- if(result){
-  document.write(result);
- }else{
-  document.write('很遗憾，下次努力，幸运一定会掉落在您的头顶哈');
- }
- 
- var obj={
-	"data":[
-		{"name":"天啦,95折"},
-		{"name":"送精美保温瓶一杯(冬天来了，暖手更暖心)"},
-		{"name":"恭喜你，喜获店家亲笔签名"},
-		{"name":"刘德华演唱会一张"},
-		{"name":"免费逛窑子"},
-		{"name":"免费逛窑子"},
-		{"name":"刘德华演唱会一张"},
-		{"name":"天啦,95折"},
-		{"name":"天啦,95折"},
-		{"name":"送精美保温瓶一杯(冬天来了，暖手更暖心)"},
-		{"name":"韩信11"},
-		{"name":"送精美保温瓶一杯(冬天来了，暖手更暖心)"},
-		{"name":"天啦,95折"},
-		{"name":"天啦,95折"},
-	],
-	"code":1,
-	"mag":"请求成功！"
-}
+ $(".c-lucky").parent().append("<p class='grant'>本程序由北京优视科技出版</p>")
 
 var array = ['天啦,95折','恭喜你，喜获店家亲笔签名','天啦,95折','刘德华演唱会一张','天啦,95折','免费逛窑子','天啦,95折','范冰冰谁都可以上','送精美保温瓶一杯(冬天来了，暖手更暖心)','韩信大将军赠予你','天啦,95折','小乔也归你','大乔不能跟我抢','天啦,95折'];
-var name1 =[164,-164,0];
-var time1 = [0,500,500];
-var toggle = 1;
-var setAction=null;
-var setStop=null;
-var setFontSize=null;
-var stopNowTime=1;
 
 function random(length){
 	var temp = Math.floor(Math.random() * length + 1);
