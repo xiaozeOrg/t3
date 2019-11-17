@@ -111,17 +111,13 @@ section {
 <div class="c-lucky">
 	<img class="isYou" src="http://demo.sc.chinaz.net/Files/DownLoad/webjs1/201906/jiaoben6857/img/luckyDog/isYou.png" style="display: none;">
 	<div class="luckyName">
-		<div class="name1">
-		</div>
 		<div class="name2">
 			祝您好运
-		</div>
-		<div class="name3">
 		</div>
 	</div>
 	
 	<input class="actionBtn" type="button" id="action">
-	<input class="stopBtn" type="button" value="停止" id="stop">
+	<input class="stopBtn" type="button" value="开始" id="stop">
 </div>
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -180,21 +176,29 @@ function random(length){
 	return temp;
 }
 
-$("#action").click(function(){
-	var attr = $("#action").attr("used");
-	if(attr)return alert("您已经抽过奖啦~");
+$("#stop").click(function(){ 
+	var used = $("#action").attr("used");
+	var stop = $("#stop").attr("stop");
+	if(used && stop)return alert("别闹！亲， 您已经抽过奖啦~");
+	var stopFlag = $("#stop").val();
+	if("停止" === stopFlag){
+		$("#stop").attr("stop",true);
+		setTimeout(function(){
+			var radom = random(array.length);
+			var text = array[radom];
+			var name2 = $(".name2");
+			//name2.css("font-size","30px")
+			name2.text(text);
+			name2.fadeOut("slow").fadeOut(3000).fadeIn(500);
+			fontShowIng(); 
+			
+		},500); 
+		return;
+	}
+	$("#stop").val("停止");
 	$("#action").attr("used",true);
-	//$("#palyerAction").attr("src","http://demo.sc.chinaz.net/Files/DownLoad/webjs1/201906/jiaoben6857/img/luckyDog/action.mp3");
 	//显示抽奖的内容
 	showing();
-	return;
-	if(toggle==1){
-		setAction = setInterval("action(100)",300);
-		toggle=0;
-		stopNowTime=1;
-		$(".isYou").css("display","none");
-		clearInterval(setFontSize);
-	}
 });
 
 /**
@@ -215,7 +219,7 @@ function fontShowIng(){
 }
 
 $(".stopBtn").click(function(){
-	
+	return;
 	$("#stop").attr("stop",true);
 
 	setTimeout(function(){
@@ -226,6 +230,7 @@ $(".stopBtn").click(function(){
 		name2.text(text);
 		name2.fadeOut("slow").fadeOut(3000).fadeIn(500);
 		fontShowIng(); 
+		
 	},500);  
 });
 function showing(){
