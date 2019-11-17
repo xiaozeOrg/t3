@@ -91,6 +91,20 @@
 footer{
    display:none
 }
+html {
+    background: #ffffff;
+}
+body {
+    padding: 50px 0;
+    font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    width: 800px;
+    background-color: #000000;
+}
+section {
+    font-size: 15px;
+    border-radius: 0 0 8px 8px;
+}
 </style> 
 <div class="noName" style="display: none;"></div>
 <div class="c-lucky">
@@ -134,11 +148,6 @@ footer{
 		{"name":"送精美保温瓶一杯(冬天来了，暖手更暖心)"},
 		{"name":"恭喜你，喜获店家亲笔签名"},
 		{"name":"刘德华演唱会一张"},
-		{"name":"免费逛窑子"},
-		{"name":"免费逛窑子"},
-		{"name":"免费逛窑子"},
-		{"name":"免费逛窑子"},
-		{"name":"免费逛窑子"},
 		{"name":"免费逛窑子"},
 		{"name":"免费逛窑子"},
 		{"name":"刘德华演唱会一张"},
