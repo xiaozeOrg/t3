@@ -126,7 +126,7 @@ section {
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
-	alert(window.location.href);
+	alert(decodeURI(window.location.href));
  var tagHeader = document.getElementsByTagName("header");
  var header = $("header");
  header.empty();
